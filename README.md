@@ -46,33 +46,33 @@ cd pulse
 go build ./cmd/pulse
 ```
 
-> **Note:** Raw ICMP sockets require elevated privileges on most systems.
+> **Note:** Raw ICMP sockets require elevated privileges on most systems. Use sudo on Unix/Linux systems or run as Administrator on Windows.
 
 ---
 
 ## Usage
 
 ```bash
-# Basic usage (requires root or CAP_NET_RAW)
-sudo ./pulse google.com
+# Basic usage (requires elevated privileges)
+./pulse google.com
 
 # Send 10 pings with 500ms interval
-sudo ./pulse -c 10 -i 0.5 google.com
+./pulse -c 10 -i 0.5 google.com
 
 # Verbose mode with timestamps
-sudo ./pulse -v -c 5 cloudflare.com
+./pulse -v -c 5 cloudflare.com
 
 # Large payload (1400 bytes) with 5s timeout
-sudo ./pulse -s 1400 -timeout 5 8.8.8.8
+./pulse -s 1400 -timeout 5 8.8.8.8
 
 # Ping IPv6 address
-sudo ./pulse -c 4 2606:4700:4700::1111
+./pulse -c 4 2606:4700:4700::1111
 
 # Infinite pings (stop with Ctrl+C)
-sudo ./pulse -t example.com
+./pulse -t example.com
 
 # Flags can come after host too!
-sudo ./pulse google.com -t -c 10
+./pulse google.com -t -c 10
 ```
 
 ### Example Output
