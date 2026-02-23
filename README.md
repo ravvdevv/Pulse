@@ -169,4 +169,4 @@ The checksum algorithm and packet structure are implemented manually in
 
 ## License
 
-MIT
+MIT [LICENSE](LICENSE)
